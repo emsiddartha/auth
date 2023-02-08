@@ -8,7 +8,7 @@ val MongodbDriverVersion = "4.8.1"
 val TypeSafeConfigVersion = "1.4.2"
 val ScalaTestVersion = "3.2.15"
 val ScalaTestFlatSpecVersion = "3.2.15"
-val ScalaMockVersion = "5.1.0"
+val MockitoVersion = "3.2.15.0"
 
 lazy val root = (project in file(".")).aggregate(core, protocol)
 
@@ -22,7 +22,7 @@ lazy val core = (project in file("core")).settings(
     "com.typesafe" % "config" % TypeSafeConfigVersion,
     "org.scalatest" %% "scalatest" % ScalaTestVersion % "test",
     "org.scalatest" %% "scalatest-flatspec" % ScalaTestFlatSpecVersion % "test",
-    "org.scalamock" %% "scalamock" % ScalaMockVersion % Test
+    "org.scalatestplus" %% "mockito-4-6" % MockitoVersion % "test"
   )
 ).dependsOn(protocol)
 
